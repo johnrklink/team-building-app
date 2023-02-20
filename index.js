@@ -38,4 +38,20 @@ function createTeam() {
         }
       });
   }
+  function addEngineer(){
+    inquirer
+    .prompt([
+        {
+            type: 'input',
+            name: 'engineerName',
+            message: "What is the enineer's name?",
+            validate: (answer) => {
+                if (answer !== '') {
+                    return true;
+                }
+                return 'Please enter a valid name';
+            }
+        }
+    ])
+  }
   console.log(createTeam)
